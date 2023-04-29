@@ -51,7 +51,7 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     encoding.free();
-
+    console.log("chat.handler messagesToSend:", messagesToSend);
     const stream = await OpenAIStream(model, promptToSend, temperatureToUse, key, messagesToSend);
 
     return new Response(stream);
