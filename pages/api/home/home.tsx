@@ -361,7 +361,7 @@ const Home = ({
     >
       <Head>
         <title>Chatbot UI</title>
-        <meta name="description" content="ChatGPT but better." />
+        <meta name="description" content="CocoaChat but better." />
         <meta
           name="viewport"
           content="height=device-height ,width=device-width, initial-scale=1, user-scalable=no"
@@ -396,6 +396,9 @@ const Home = ({
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+
+  console.log("process.env default_model ", process.env.DEFAULT_MODEL);
+
   const defaultModelId =
     (process.env.DEFAULT_MODEL &&
       Object.values(OpenAIModelID).includes(
